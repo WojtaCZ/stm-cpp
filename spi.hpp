@@ -18,7 +18,7 @@
 #ifndef STMCPP_SPI_H
 #define STMCPP_SPI_H
 
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 #include <cstdint>
 
 namespace stmcpp::spi {

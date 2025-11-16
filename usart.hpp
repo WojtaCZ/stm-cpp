@@ -24,7 +24,7 @@
 
 #include <stmcpp/register.hpp>
 #include <stmcpp/units.hpp>
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 
 namespace stmcpp::usart {
     using namespace stmcpp;

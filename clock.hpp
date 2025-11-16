@@ -26,7 +26,7 @@
 #include <stmcpp/units.hpp>
 #include <stmcpp/error.hpp>
 
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 #include "stmcpp-config.hpp"
 
 extern "C" void SysTick_Handler();

@@ -11,7 +11,7 @@
 #include <stmcpp/clock.hpp>
 #include <stmcpp/error.hpp>
 
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 
 namespace stmcpp::i2c {
     using namespace stmcpp;

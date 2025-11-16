@@ -21,7 +21,7 @@
 #include <cstdint>
 #include <cstddef>
 #include <stmcpp/register.hpp>
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 
 namespace stmcpp::dmamux1 {
     using namespace stmcpp;

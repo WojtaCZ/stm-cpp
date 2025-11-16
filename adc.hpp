@@ -18,7 +18,7 @@
 #ifndef STMCPP_ADC_H
 #define STMCPP_ADC_H
 
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 #include <cstdint>
 
 #include <stmcpp/register.hpp>

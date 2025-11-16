@@ -20,7 +20,7 @@
 
 #include <cstdint>
 #include <cstddef>
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 
 #include <stmcpp/register.hpp>
 

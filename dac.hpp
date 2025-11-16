@@ -18,7 +18,7 @@
 #ifndef STMCPP_DAC_H
 #define STMCPP_DAC_H
 
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 #include <cstdint>
 
 #include <stmcpp/register.hpp>

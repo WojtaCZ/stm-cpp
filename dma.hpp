@@ -22,7 +22,7 @@
 #include <cstddef>
 #include <vector>
 #include <stmcpp/register.hpp>
-#include "stm32h753xx.h"
+#include <stmcpp/stmheader.hpp>
 
 namespace stmcpp::dma{
     using namespace stmcpp;
