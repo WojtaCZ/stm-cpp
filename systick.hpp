@@ -15,6 +15,7 @@
 
 
 namespace stmcpp::systick {
+    using namespace stmcpp;
     using namespace stmcpp::units;
 
 
