@@ -18,9 +18,11 @@
 #ifndef STMCPP_STMHEADER_H
 #define STMCPP_STMHEADER_H
 
-#if DEVICE == STM32G431xx
+#if defined(STM32G431xx)
 #include <stm32g431xx.h>
-#elif DEVICE == STM32G431xx
+#elif defined(STM32G071xx)
+#include <stm32g071xx.h>
+#elif defined(STM32H753xx)
 #include <stm32h753xx.h>
 #else
 #error "Unsupported STM32 device. Please define the correct DEVICE macro."

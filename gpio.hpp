@@ -182,12 +182,16 @@ namespace stmcpp::gpio{
             }
 
             void enableInterrupt(gpio::interrupt::edge edge) const {
-                
+
                 static constexpr auto extiIndex_ = static_cast<unsigned int>(Pin / 4);
                 static constexpr auto extiShift_ = (Pin % 4) * 4;
                 static constexpr auto extiPort_ = (static_cast<uint32_t>(Port) - GPIOA_BASE) / 0x0400UL;
 
+#if defined(STM32G071xx)
+                reg::change(std::ref(EXTI->EXTICR[extiIndex_]), 0x0F, extiPort_, extiShift_);
+#else
                 reg::change(std::ref(SYSCFG->EXTICR[extiIndex_]), 0x0F, extiPort_, extiShift_);
+#endif
 
                 setInterruptEdge(edge);
 
@@ -201,11 +205,20 @@ namespace stmcpp::gpio{
             }
 
             void clearInterruptFlag() const {
+#if defined(STM32G071xx)
+                reg::set(std::ref(EXTI->RPR1), 0x01, Pin);
+                reg::set(std::ref(EXTI->FPR1), 0x01, Pin);
+#else
                 reg::set(std::ref(EXTI->PR1), 0x01, Pin);
+#endif
             }
 
             bool getInterruptFlag() const {
+#if defined(STM32G071xx)
+                return reg::read(std::ref(EXTI->RPR1), 0x01, Pin) || reg::read(std::ref(EXTI->FPR1), 0x01, Pin);
+#else
                 return reg::read(std::ref(EXTI->PR1), 0x01, Pin);
+#endif
             }
 
             void setInterruptEdge(gpio::interrupt::edge edge) const {
